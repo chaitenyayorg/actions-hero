@@ -1,0 +1,12 @@
+name: Show github context
+run-name: Display github context
+
+on:
+    push:
+        branches:
+            - main
+jobs:
+    display-github-context:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo ${{ toJson(github) }}| jq
