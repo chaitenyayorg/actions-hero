@@ -9,4 +9,4 @@ jobs:
     display-github-context:
         runs-on: ubuntu-latest
         steps:
-            - run: echo ${{ toJson(github) }}| jq
+            - run: echo "${{ toJson(github) }} | jq"
