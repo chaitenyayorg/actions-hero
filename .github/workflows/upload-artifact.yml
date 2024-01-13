@@ -13,7 +13,7 @@ jobs:
       - run: pwd
       - run: mkdir -p samplepath
       - run: echo ${{ github.run_id }} > samplepath/hello.txt
-      - run: ls -ltr
+      - run: ls -ltr /samplepath
       - name: Upload a file
         uses: actions/upload-artifact@v4
         with:
