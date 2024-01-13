@@ -12,14 +12,13 @@ jobs:
     steps:
       - run: pwd
       - run: mkdir -p samplepath
-      - run: mkdir -p newpath
-      - run: echo Hello > hello.txt
-      - run: ls -ltr|grep hello
+      - run: echo ${github.run_id} > samplepath/hello.txt
+      - run: ls -ltr
       - name: Upload a file
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: hello.txt
+          path: samplepath/hello.txt
       - run: ls -ltr
 
 
