@@ -12,6 +12,14 @@ jobs:
     steps:
       - run: pwd
       - run: mkdir -p samplepath
-      - run: echo Hello > hello.txt
+      - run: mkdir -p newpath
+      - run: echo Hello > samplepath/hello.txt
       - run: ls -ltr|grep hello
+      - name: Upload a file
+        uses: actions/upload-artifact@v4
+        with:
+          name: newpath/my-artifact
+          path: sampplepath/hello.txt
+      - run: ls -ltr
+
 
