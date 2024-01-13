@@ -10,6 +10,7 @@ jobs:
   Create-an-artifact:
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
       - run: mkdir -p samplepath
       - run: echo Hello > hello.txt
 
