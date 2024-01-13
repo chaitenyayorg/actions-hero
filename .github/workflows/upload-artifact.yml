@@ -13,13 +13,13 @@ jobs:
       - run: pwd
       - run: mkdir -p samplepath
       - run: mkdir -p newpath
-      - run: echo Hello > samplepath/hello.txt
+      - run: echo Hello > hello.txt
       - run: ls -ltr|grep hello
       - name: Upload a file
         uses: actions/upload-artifact@v4
         with:
           name: newpath/my-artifact
-          path: sampplepath/hello.txt
+          path: hello.txt
       - run: ls -ltr
 
 
