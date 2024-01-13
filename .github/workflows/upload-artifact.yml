@@ -10,15 +10,20 @@ jobs:
   Create-an-artifact:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: mkdir -p samplepath
-      - run: echo ${{ github.run_id }} > samplepath/${{ github.sha }}.txt
-      - run: ls -ltr samplepath
+      - name: Get present working dir
+        run: pwd
+      - name: Create dir samplepath
+        run: mkdir -p samplepath
+      - name: Create dir artifact
+        run: echo ${{ github.run_id }} > samplepath/${{ github.sha }}.txt
+      - name: list dir content
+        run: ls -ltr samplepath
       - name: Upload a file
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: samplepath/${{ github.sha }}.txt
-      - run: ls -ltr
+      - name: again list dir content
+        run: ls -ltr
 
 
