@@ -26,5 +26,6 @@ jobs:
 
     - name: Display Matrix Context
       run: |
+        echo "Full Matrix: ${{ matrix }}"
         echo "Operating System: ${{ matrix.os }}"
         echo "Node.js Version: ${{ matrix.node }}"
