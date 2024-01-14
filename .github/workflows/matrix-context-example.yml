@@ -2,9 +2,11 @@ name: Matrix Context Example
 run-name: Matrix Context Example
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - "main"
+  workflow_dispatch:
+
 
 jobs:
   build:

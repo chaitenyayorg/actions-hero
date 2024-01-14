@@ -2,9 +2,11 @@ name: Upload an artifact
 run-name: Upload an artifact
 
 on:
-  push:
-    branches:
-      - "main"
+  # push:
+  #   branches:
+  #     - "main"
+  workflow_dispatch:
+
 
 jobs:
   Create-an-artifact:
